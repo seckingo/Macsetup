@@ -1,0 +1,14 @@
+--- # debug nasil yapilir
+- hosts: openvpn
+  remote_user: openvpnas
+  become: yes
+  become_method: sudo
+  connection: ssh
+  gather_facts: no
+  tasks:
+  - name: Install Telnet
+    apt:
+      name: telnet
+      state: latest
+    register: result
+  - debug: var=result

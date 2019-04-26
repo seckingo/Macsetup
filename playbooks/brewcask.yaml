@@ -1,0 +1,19 @@
+---
+- hosts: local
+  connection: local
+  tasks:
+  - name: Installing
+    homebrew_cask: name={{ item }} state=present
+    with_items:
+    - kubernetes-cli
+    - cd-to
+    - visual-studio-code
+    - parallels-desktop
+    - alfred
+    - sourcetree
+    - Microsoft Remote Desktop
+    - Clockr
+    - Docker
+    - Kubernetes client
+    - Kubedns
+    - Ansible

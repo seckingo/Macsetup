@@ -1,0 +1,4 @@
+---
+- import_playbook: playbooks/firefox.yml
+- import_playbook: playbooks/google_chrome.yml
+- import_playbook: playbooks/atom.yml

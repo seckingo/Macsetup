@@ -1,0 +1,16 @@
+--- # variable testleri
+- hosts: '{{ myhosts }}'
+  remote_user: openvpnas
+  become: yes
+  become_method: sudo
+  connection: ssh
+  gather_facts: '{{ gather }}'
+  vars:
+          myhosts: openvpn
+          gather: yes
+          pkg: telnet
+  tasks:
+  - name: Install software
+    apt: 
+      name: '{{ pkg }}'
+      state: latest

@@ -1,0 +1,5 @@
+[local]
+127.0.0.1
+
+[openvpn]
+54.93.184.53 ansible_user=openvpnas

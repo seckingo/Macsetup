@@ -1,0 +1,22 @@
+--- # ilk deneme yaml
+- hosts: openvpn
+  remote_user: openvpnas
+  become: yes
+  become_method: sudo
+  connection: ssh
+  gather_facts: yes
+  vars:
+    username: openvpnas
+  tasks:
+  - name: Install nginx server
+    apt:
+      name: nginx
+      update_cache: yes
+      state: latest
+    notify:
+    - startservice
+  handlers:
+  - name: startservice
+    service:
+      name: nginx
+      state: restarted
